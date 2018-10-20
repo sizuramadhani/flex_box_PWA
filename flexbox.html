@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Flexbox</title>
+	<!-- akan membuat responsive yang menyesuaikan dengan lebarnya -->
+	<meta name="viewport" content="width=device-width,initial-scale=1"
+	>
+	<style>
+		.biru{
+			background-color: blue;
+		}
+		.biru_laut{
+			background-color: lightblue;
+		}
+		.hijau{
+			background-color: green;
+		}
+		.merah{
+			background-color: red;
+		}
+		.orange{
+			background-color: orange;
+		}
+		.box{
+			min-height: 100px;
+			width: 100%;
+		}
+		.container{
+			display: flex;
+			/*menyesuaikan ukuran dr wadahnya agar tidak melebihi kapasitas*/
+			flex-wrap: wrap;
+		}
+
+		/*media query*/
+		@media screen and (min-width: 400px){
+			.biru{
+				width: 50%;
+			}
+			.biru_laut{
+				width: 50%;
+			}
+		}
+
+		@media screen and (min-width: 550px){
+			.hijau, .merah, .orange{
+				width: 33.33%;
+			}
+		}
+		/*batas maksimal 700 selebihnya akan ada ruang kosong*/
+		@media screen and (min-width: 700px){
+			.container{
+				width: 700px;
+				margin-left: auto;
+				margin-right: auto;
+			}
+		}
+	</style>
+</head>
+<body>
+    <div class="container">
+    	<div class="box biru">1</div>
+    	<div class="box biru_laut">2</div>
+    	<div class="box hijau">3</div>
+    	<div class="box merah">4</div>
+    	<div class="box orange">5</div>
+    </div>
+</body>
+</html>
